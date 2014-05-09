@@ -1,5 +1,6 @@
-class CalculationController < ApplicationController
+class CalculationsController < ApplicationController
   def home
+
   end
 
   def square_root
@@ -8,5 +9,7 @@ class CalculationController < ApplicationController
   end
 
   def pmt
+
+
   end
 end
