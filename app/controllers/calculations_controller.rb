@@ -3,9 +3,9 @@ class CalculationsController < ApplicationController
 
   end
 
-  def square
-    @sqr_number = params[:number]
-    @sqr_answer = @sqr_number**2
+  def sqr
+    @sqr_number = params[:number].to_i
+    @sqr_answer = @sqr_number*@sqr_number
   end
 
 
