@@ -4,19 +4,26 @@ class CalculationsController < ApplicationController
   end
 
   def square
-    @the_number = params[:number].to_f
-    @answer = Math.sqr(@the_number)
+    @sqr_number = params[:number]
+    @sqr_answer = @sqr_number**2
   end
 
 
 
-  def square_root
-    @the_number = params[:number].to_f
-    @answer = Math.sqrt(@the_number)
-  end
-
-  def pmt
-
+  def sqrt
+    @sqrt_number = params[:number].to_i
+    @sqrt_answer = Math.sqrt(@sqrt_number)
 
   end
+
+
+
+
+  def pmt (rate, nper, pv)
+
+((rate/12) * pv)/(1 - ((1 + (rate/12))**(-nper*12)))
+
+  end
+
+
 end
