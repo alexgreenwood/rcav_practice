@@ -19,9 +19,18 @@ class CalculationsController < ApplicationController
 
 
 
-  def pmt (rate, nper, pv)
+  def pmt
 
-((rate/12) * pv)/(1 - ((1 + (rate/12))**(-nper*12)))
+    # (rate, nper, pv)
+    # ((rate/12) * pv)/(1 - ((1 + (rate/12))**(-nper*12)))
+
+    @rate = params[:interest_rate].to_i
+    @nper = params[:number_of_payments].to_i
+    @pv = params[:present_value].to_i
+    @payment = @pv + @nper
+
+    # @payment = ((@rate/12) * @pv)/(1 - ((1 + (@rate/12))**(-@nper*12)))
+
 
   end
 
